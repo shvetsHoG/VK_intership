@@ -9,6 +9,7 @@ document.querySelectorAll('.dropdown').forEach(function(dropDownWrapper) {
     });
     
     items.forEach(item => item.addEventListener("click", function(event) {
+        button.dataset.value = this.innerText;
         button.innerText = this.innerText;
         button.focus();
         itemList.classList.remove("dropdown__list-visible");
