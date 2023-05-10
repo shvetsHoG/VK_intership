@@ -3,10 +3,14 @@ document.querySelectorAll('.dropdown').forEach(function(dropDownWrapper) {
     const itemList = dropDownWrapper.querySelector('.dropdown__list');
     const items = dropDownWrapper.querySelectorAll('.dropdown__list-item');
     
-    button.addEventListener("click", function() {
-        itemList.classList.toggle("dropdown__list-visible");
-        this.classList.add("dropdown__btn-active");
-    });
+    if (button !== null) {
+        button.addEventListener("click", function() {
+            if (itemList !== null) {
+                itemList.classList.toggle("dropdown__list-visible");
+                this.classList.add("dropdown__btn-active");
+            }
+        });
+    }
     
     items.forEach(item => item.addEventListener("click", function(event) {
         button.dataset.value = this.innerText;
@@ -17,7 +21,7 @@ document.querySelectorAll('.dropdown').forEach(function(dropDownWrapper) {
     }));
     
     document.addEventListener("click", (event) => {
-        if (event.target !== button) {
+        if (event.target !== button && itemList !== null) {
             itemList.classList.remove("dropdown__list-visible");
             button.classList.remove("dropdown__btn-active");
         }

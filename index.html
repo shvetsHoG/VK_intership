@@ -5,13 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./air-datepicker/air-datepicker.css">
 </head>
 <body>
 	<div class="form">
 		<div class="wrapper">
 			<div class="dropdown">
 				<div class="wrapper__name first_name">Башня:</div>
-				<button class="dropdown__btn">Выберите башню</button>
+				<button class="dropdown__btn" data-value="null">Выберите башню</button>
 				<ul class="dropdown__list">
 				  <li class="dropdown__list-item" data-value="А">А</li>
 				  <li class="dropdown__list-item" data-value="Б">Б</li>
@@ -19,25 +20,19 @@
 			</div>
 			<div class="dropdown">
 				<div class="wrapper__name">Этаж:</div>
-				<button class="dropdown__btn">Выберите этаж</button>
+				<button class="dropdown__btn" data-value="null">Выберите этаж</button>
 				<ul class="dropdown__list floor">
 				</ul>
 			</div>
 			<div class="dropdown">
 				<div class="wrapper__name">Комната:</div>
-				<button class="dropdown__btn">Выберите комнату</button>
+				<button class="dropdown__btn" data-value="null">Выберите комнату</button>
 				<ul class="dropdown__list room">
 				</ul>
 			</div>
 			<div class="dropdown">
-				<div class="wrapper__name date">Дата:</div>
-				<button class="dropdown__btn">Выберите дату</button>
-				<ul class="dropdown__list">
-				  <li class="dropdown__list-item" data-value="1">1</li>
-				  <li class="dropdown__list-item" data-value="2">second</li>
-				  <li class="dropdown__list-item" data-value="3">third</li>
-				  <li class="dropdown__list-item" data-value="4">fourth</li>
-				</ul>
+				<div class="wrapper__name">Дата:</div>
+				<input type="text" id="airdatepicker" class="dropdown__btn date__btn" placeholder="Выберите дату" data-value="null" />
 			</div>
 			<textarea class="wrapper__comment" placeholder="Напишите комментарий к бронированию"></textarea>
 			<div class="wrapper__btns">
@@ -48,5 +43,9 @@
 	</div>
 	<script src="./js/app.js"></script>
 	<script src="./js/button.js"></script>
+	<script src="./air-datepicker/air-datepicker.js"></script>
+	<script>
+		new AirDatepicker('#airdatepicker');
+	</script>
 </body>
 </html>

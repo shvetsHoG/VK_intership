@@ -84,7 +84,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 	color: #fff;
 	margin: 0;
 	padding: 0;
-	width: 50%;
+	width: 60%;
 	height: 25%;
 	border: none;
 	border-radius: 5px;
@@ -125,11 +125,11 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 }
 
 .wrapper__btns__confirm:hover {
-
+	color: #2865ff;
 }
 
 .wrapper__btns__clear:hover {
-	color: rgb(255, 227, 227);
+	color: #000000;
 }
 
 .wrapper__btns__clear:active {
@@ -141,6 +141,11 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 	transform: translateY(2px);
 	box-shadow: 1px 1px #0e4a45;
 }
+
+.date__btn::placeholder {
+	color: #fff;
+}
+
 /* =============================== BUTTON ============================  */
 .dropdown {
 	position: relative;
@@ -169,7 +174,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 	background: rgba(255, 255, 255, .4);
 }
 
-.dropdown__btn:focus , .dropdown__btn-active, .wrapper__comment:focus{
+.dropdown__btn:focus , .dropdown__btn-active, .wrapper__comment:focus, .date__btn:focus{
 	outline: none;
 	box-shadow: 0px 0px 0px 2px rgba(176, 198, 225, .6);
 }
@@ -196,7 +201,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 46px;
+	top: 80px;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
@@ -206,7 +211,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 	box-shadow: 0px 4px 8px rgba(176, 198, 225, .6);
 	border-radius: 6px;
 	width: 100%;
-	max-height: 200px;
+	max-height: 236px;
 	overflow-y: auto;
 	background: rgb(255, 255, 255);
 
@@ -239,6 +244,21 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 	background: rgba(226, 232, 255, 0.6);
 }
 
+
+@media (max-width: 425px) {
+	.btn {
+		padding: 15px 12px;
+	}
+
+	.dropdown__btn {
+		height: 60px;
+	}
+
+	.wrapper__comment {
+		width: 80%;
+	}
+}
+/*=================== SCROLLBAR ==================*/
 .dropdown__list::-webkit-scrollbar {
 	width: 15px;
 }
@@ -248,7 +268,11 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 }
 
 .dropdown__list::-webkit-scrollbar-thumb {
-	background: #5b63fe;
+	background: #08091d;
 	border-radius: 8px;
 	border: 3px solid #cdcdcd;
+}
+
+.dropdown__list::-webkit-scrollbar-thumb:hover {
+	background: #4e4e4e;
 }
